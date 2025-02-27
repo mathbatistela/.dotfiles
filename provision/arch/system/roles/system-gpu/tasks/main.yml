@@ -1,0 +1,12 @@
+---
+- name: GPU - AMD Drivers
+  ansible.builtin.include_tasks: "./amd.yml"
+  when: '"amd" in system.graphics_card'
+
+- name: GPU - Intel Drivers
+  ansible.builtin.include_tasks: "./intel.yml"
+  when: '"intel" in system.graphics_card'
+
+- name: GPU - NVidia Drivers
+  ansible.builtin.include_tasks: "./nvidia.yml"
+  when: '"nvidia" in system.graphics_card'

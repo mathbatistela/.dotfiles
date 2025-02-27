@@ -1,0 +1,16 @@
+---
+- name: NVIDIA - Drivers Pacman
+  become: true
+  become_user: root
+  pacman:
+    update_cache: false
+    name:
+      - nvidia
+      - nvidia-utils
+      - nvidia-settings
+      - opencl-nvidia
+      - lib32-nvidia-utils
+      - lib32-opencl-nvidia
+      - cuda
+      - vdpauinfo
+      - clinfo

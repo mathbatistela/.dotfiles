@@ -1,0 +1,23 @@
+---
+- name: IDEs - install
+  become: true
+  become_user: root
+  ansible.builtin.package:
+    name:
+      - tidy
+      - luarocks
+      - neovim
+      - helix
+    state: present
+
+- name: IDEs - Install aur packages
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - dotenv-linter-bin
+
+- name: Nvim setup
+  ansible.builtin.import_tasks: ./config/nvim.yml
+
+- name: Helix setup
+  ansible.builtin.import_tasks: ./config/helix.yml

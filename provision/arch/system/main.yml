@@ -1,0 +1,32 @@
+---
+- name: Arch System Roles
+  hosts: local
+  vars_files: ../../vars/all.yml
+  roles:
+    - system-rkhunter
+    - system-yay
+    - system-pacman
+    - system-user
+    - system-xdg
+    - system-pacseek
+    - system-grub
+    - system-gpu
+    - system-greetd
+    - system-cronie
+    - system-backup
+    - system-cpu
+    - system-locale
+    - system-time
+    - system-ssh
+    - system-network
+    - system-bluetooth
+    - system-audio
+    - system-player
+    - system-tailscale
+
+    # Interface
+    - ui-theme
+    - ui-hyprland
+    - ui-ags
+    - ui-font-manager
+    - ui-file-manager
